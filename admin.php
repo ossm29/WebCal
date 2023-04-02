@@ -2,7 +2,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
+if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'admin') {
     header('Location: index.php');
     exit;
 }

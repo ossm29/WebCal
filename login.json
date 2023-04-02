@@ -24,6 +24,11 @@
             "login": "etudiant",
             "password": "$2y$10$8mRbEbP7o66WUivXP89W4eLLnUWH2XzErT9fSYo6avoQ9ZrgG0ubm",
             "status": "etudiant"
+        },
+        {
+            "login": "admin",
+            "password": "$2y$10$Htxrkt.tp7HNy\/6XqFpDO.HrKzpnt07L4Jwutlw2f1K9Ab8Ja7BrO",
+            "status": "admin"
         }
     ]
 }
