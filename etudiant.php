@@ -1,4 +1,5 @@
 <!-- Page du calendrier étudiant -->
+
 <?php
 session_start();
 
@@ -9,7 +10,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -24,14 +25,19 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
             <input type="submit" value="Déconnexion" style="float:right;">
         </form>
     </header>
+    <div>
+        <button id="previousWeek">&lt;&lt; Semaine précédente</button>
+        <span id="weekDates">Semaine du ...</span>
+        <button id="nextWeek">Semaine suivante &gt;&gt;</button>
+    </div>
     <table id="tableau" border=1>
         <tr>
             <th class='heure' rowspan="2">Heure</th>
-            <th class='jour' colspan="2">Lundi</th>
-            <th class='jour' colspan="2">Mardi</th>
-            <th class='jour' colspan="2">Mercredi</th>
-            <th class='jour' colspan="2">Jeudi</th>
-            <th class='jour' colspan="2">Vendredi</th>
+            <th class='jour' id="jour1" colspan="2">Lundi</th>
+            <th class='jour' id="jour2" colspan="2">Mardi</th>
+            <th class='jour' id="jour3" colspan="2">Mercredi</th>
+            <th class='jour' id="jour4" colspan="2">Jeudi</th>
+            <th class='jour' id="jour5" colspan="2">Vendredi</th>
         </tr>
         <?php
             for($i = 0; $i<5; $i++) {
@@ -47,7 +53,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
 
                     for($j = 0; $j < 5; $j++) {
                         echo "<td class='groupe-1'></td>";
-                        echo "<td></td>";
+                        echo "<td class='groupe-2'></td>";
                     }
                     echo "</tr>";
                 }
@@ -55,5 +61,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
         ?>
 
     </table>
+    <script src="etudiant.js"></script>
 </body>
 </html>
