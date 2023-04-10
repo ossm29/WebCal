@@ -14,6 +14,21 @@
             "login": "etudiant1",
             "password": "$2y$10$pnz6dQ9u9mwcCKtZXRgfzOkQFCW.mLNwu6NXF\/iu5NnNXID0RP9Bq",
             "status": "etudiant"
+        },
+        {
+            "login": "test",
+            "password": "$2y$10$oaE.01bKtApsMsA.Ff1Mu.iZZhfuoFGRgZYAS5TNbyAqaWPrwq4eG",
+            "status": "etudiant"
+        },
+        {
+            "login": "test3",
+            "password": "$2y$10$bvbt8U1YH0PMWZwmX\/jQ0uEIlV8lejUxzRKkEiSh4N6bvc3hNnQFe",
+            "status": "admin"
+        },
+        {
+            "login": "test2",
+            "password": "$2y$10$AEVTPTHMerHN\/sbI6WvEGeaShE2R6Pkipbcr4kCXl\/rkPmPGY4E2u",
+            "status": "prof"
         }
     ]
 }
