@@ -1,0 +1,19 @@
+{
+    "users": [
+        {
+            "login": "admin",
+            "password": "$2y$10$WTZdxhDkUwWQvJYLj.o3k.ckR5iEcKWRJ9uP6zv2bGZGrpos1Mv..",
+            "status": "etudiant"
+        },
+        {
+            "login": "etudiant",
+            "password": "$2y$10$s923Rores1sEiWlWFbqRletpb0Epqs6p40ddDxgM6QFXy4i3SeOvG",
+            "status": "etudiant"
+        },
+        {
+            "login": "etudiant1",
+            "password": "$2y$10$pnz6dQ9u9mwcCKtZXRgfzOkQFCW.mLNwu6NXF\/iu5NnNXID0RP9Bq",
+            "status": "etudiant"
+        }
+    ]
+}
