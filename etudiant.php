@@ -1,5 +1,4 @@
 <!-- Page du calendrier étudiant -->
-
 <?php
 session_start();
 
@@ -8,8 +7,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -24,12 +24,36 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
             <input type="submit" value="Déconnexion" style="float:right;">
         </form>
     </header>
-    <div>
-        <button id="previousWeek">&lt;&lt; Semaine précédente</button>
-        <span id="weekDates">Semaine du ...</span>
-        <button id="nextWeek">Semaine suivante &gt;&gt;</button>
-    </div>
-    <div id="tableContainer"></div>
-    <script src="etudiant.js"></script>
+    <table id="tableau" border=1>
+        <tr>
+            <th class='heure' rowspan="2">Heure</th>
+            <th class='jour' colspan="2">Lundi</th>
+            <th class='jour' colspan="2">Mardi</th>
+            <th class='jour' colspan="2">Mercredi</th>
+            <th class='jour' colspan="2">Jeudi</th>
+            <th class='jour' colspan="2">Vendredi</th>
+        </tr>
+        <?php
+            for($i = 0; $i<5; $i++) {
+                echo "<th class='groupe-1'>Groupe 1</th> <th>Groupe 2</th>";
+            }
+        ?>
+
+        <?php 
+            for($h = 8; $h <= 18; $h++) {
+                for($m = 0; $m < 60; $m += 15) {
+                    echo "<tr>";
+                    echo "<td class='heure'>" . sprintf("%02d", $h) . ":" . sprintf("%02d", $m) . "</td>";
+
+                    for($j = 0; $j < 5; $j++) {
+                        echo "<td class='groupe-1'></td>";
+                        echo "<td></td>";
+                    }
+                    echo "</tr>";
+                }
+            }
+        ?>
+
+    </table>
 </body>
 </html>
