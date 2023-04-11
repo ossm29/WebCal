@@ -212,7 +212,7 @@ function fillCalendar() {
                         newcell.setAttribute('rowspan', nbLignes);
                         newcell.setAttribute('id', cours.matiere);
                     
-                        const courseInfo = `${cours.matiere}<br>${cours.enseignant}<br>${cours.salle}`;
+                        const courseInfo = `${cours.matiere}<br>${cours.type}<br>${cours.enseignant}<br>${cours.salle}`;
                         newcell.innerHTML = courseInfo;
                         ligne.appendChild(newcell);
                     

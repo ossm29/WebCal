@@ -1,4 +1,4 @@
-<!-- fichier servant à afficher le formulaire d'inscription -->
+<!-- Page du formulaire d'inscription -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
