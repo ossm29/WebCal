@@ -10,15 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Connexion au calendrier partagé</h1>
+        <img id="logo" src="../ressources/webCal.png" alt="Logo">
+        <h1>Connexion</h1>
         <?php if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials'): ?>
             <p class="error-message">Login ou mot de passe incorrect</p>
         <?php endif; ?>
         <form id="loginForm" action="php/authenticate.php" method="post">
             <label for="login">Login:</label>
-            <input type="text" id="login" name="login" required><br><br>
+            <input type="text" id="login" name="login" placeholder="login" required><br><br>
             <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <input type="password" id="password" name="password" placeholder="mot de passe" required><br><br>
             <input type="submit" value="Se connecter">
         </form>
         <p>Pas encore inscrit ? <a href="php/register.php">Créez un compte</a></p>

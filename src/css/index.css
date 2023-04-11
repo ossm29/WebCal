@@ -11,6 +11,7 @@ body {
 
 .container {
     background-color: #ffffff;
+    text-align: center;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -83,4 +84,10 @@ body {
     background: linear-gradient(270deg, white, rgba(176, 190, 197, 0.7)); /* 1 */
     background-size: 200% 200%; /* 2 */
     animation: movingGradient 30s infinite linear; /* 3 */
+}
+
+#logo {
+    max-height: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
 }

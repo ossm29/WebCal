@@ -86,3 +86,13 @@ body {
     background-size: 200% 200%; /* 2 */
     animation: movingGradient 30s infinite linear; /* 3 */
 }
+
+#logo {
+    max-height: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.calendrier-title {
+    margin-top: -20px; /* Ajustez cette valeur pour déplacer le titre vers le haut ou le bas */
+}
