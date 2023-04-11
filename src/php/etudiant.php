@@ -24,11 +24,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
             <input type="submit" value="Déconnexion" style="float:right;">
         </form>
     </header>
-    <div id="week-navigation">
-    <button id="previous-week">&larr;</button>
-    <span id="current-week"></span>
-    <button id="next-week">&rarr;</button>
-</div>
+        <div id="week-navigation">
+        <button id="previous-week">&larr;</button>
+        <span id="current-week"></span>
+        <button id="next-week">&rarr;</button>
+    </div>
 
     <table id="tableau" border=1>
         <tr>

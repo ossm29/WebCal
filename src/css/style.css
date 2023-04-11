@@ -42,3 +42,47 @@ td {
 .groupe-1 {
     border-right-style: dashed;
 }
+
+#week-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background-color: #607D8B;    /* 1 */
+    border: none;                 /* 2 */
+    color: white;                 /* 3 */
+    padding: 10px 20px;           /* 4 */
+    text-align: center;           /* 5 */
+    text-decoration: none;        /* 6 */
+    display: inline-block;        /* 7 */
+    font-size: 16px;              /* 8 */
+    margin: 4px 2px;              /* 9 */
+    cursor: pointer;              /* 10 */
+    border-radius: 4px;           /* 11 */
+    transition: 0.3s;             /* 12 */
+}
+
+button:hover {
+    background-color: #4B636E;    /* 13 */
+}
+
+@keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(270deg, white, rgba(176, 190, 197, 0.7)); /* 1 */
+    background-size: 200% 200%; /* 2 */
+    animation: movingGradient 30s infinite linear; /* 3 */
+}
