@@ -16,6 +16,12 @@
             <input type="submit" value="Déconnexion" style="float:right;">
         </form>
     </header>
+    <div id="week-navigation">
+    <button id="previous-week">&larr;</button>
+    <span id="current-week"></span>
+    <button id="next-week">&rarr;</button>
+</div>
+
     <table id="tableau" border=1>
         <tr>
             <th class='heure' rowspan="2">Heure</th>
@@ -44,5 +50,6 @@
 
 
     </table>
+<script src="../js/calendar.js"></script>
 </body>
 </html>
