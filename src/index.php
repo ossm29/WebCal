@@ -16,9 +16,7 @@
             <p class="error-message">Login ou mot de passe incorrect</p>
         <?php endif; ?>
         <form id="loginForm" action="php/authenticate.php" method="post">
-            <label for="login">Login:</label>
             <input type="text" id="login" name="login" placeholder="login" required><br><br>
-            <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" placeholder="mot de passe" required><br><br>
             <input type="submit" value="Se connecter">
         </form>
