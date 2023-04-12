@@ -48,7 +48,7 @@ select {
 }
 
 input[type='submit'] {
-    background-color: #3498db;
+    background-color: #607D8B;
     color: #ffffff;
     padding: 10px;
     font-size: 16px;
@@ -58,7 +58,7 @@ input[type='submit'] {
 }
 
 input[type='submit']:hover {
-    background-color: #2980b9;
+    background-color: #4B636E;
 }
 
 .error-message {

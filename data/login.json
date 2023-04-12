@@ -29,6 +29,11 @@
             "login": "test2",
             "password": "$2y$10$AEVTPTHMerHN\/sbI6WvEGeaShE2R6Pkipbcr4kCXl\/rkPmPGY4E2u",
             "status": "prof"
+        },
+        {
+            "login": "khadija",
+            "password": "$2y$10$TLhXycQwGNAQ4ZJJQKL.w.Qh6QitZdbw\/91lXJjk.9jX6QG\/mDJvy",
+            "status": "etudiant"
         }
     ]
 }
