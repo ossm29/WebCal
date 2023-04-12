@@ -40,7 +40,7 @@ function goToNextWeek() {
 
 /* Charge les cours de la semaine et remplit le calendrier */
 function loadCourses() {
-    fetch('../../data/courses.json')
+    fetch('../data/courses.json')
         .then(response => response.json())
         .then(data => {
             //startDate = getStartOfWeek(currentDate);

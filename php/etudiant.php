@@ -19,7 +19,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
 </head>
 <body>
     <header>
-        <img id="logo" src="../../ressources/webCal.png" alt="Logo">
+        <img id="logo" src="../ressources/webCal.png" alt="Logo">
         <h1 class="calendrier-title">Calendrier Etudiant</h1>
         <form id="logoutForm" action="logout.php" method="post" style="display:inline;">
             <input type="submit" value="Déconnexion" style="float:right;">

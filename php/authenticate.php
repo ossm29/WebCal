@@ -6,7 +6,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $login_data = json_decode(file_get_contents('../../data/login.json'), true);
+    $login_data = json_decode(file_get_contents('../data/login.json'), true);
 
     $user = null;
     foreach ($login_data['users'] as $u) {

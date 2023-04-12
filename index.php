@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <img id="logo" src="../ressources/webCal.png" alt="Logo">
+        <img id="logo" src="ressources/webCal.png" alt="Logo">
         <h1>Connexion</h1>
         <?php if (isset($_GET['error']) && $_GET['error'] === 'invalid_credentials'): ?>
             <p class="error-message">Login ou mot de passe incorrect</p>
