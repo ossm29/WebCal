@@ -1,3 +1,3 @@
 # WebCal
-link : [site Web WebCal](https://webcal.site/).
+link : [WebCal](https://webcal.site/).
 
