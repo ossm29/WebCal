@@ -211,6 +211,7 @@ function fillCalendar() {
                         newcell.setAttribute('class', `groupe-${groupe}`);
                         newcell.setAttribute('rowspan', nbLignes);
                         newcell.setAttribute('id', cours.matiere);
+                        newcell.setAttribute('data-date', date);
                         newcell.setAttribute('empty-cell', '0'); // Ajoute l'attribut empty-cell 0 aux cellules non vides
 
                     
@@ -222,6 +223,8 @@ function fillCalendar() {
                         console.log("case vide");
                         const newcell = document.createElement('td');
                         newcell.setAttribute('class', `groupe-${groupe}`);
+                        newcell.setAttribute('data-date', date.toLocaleDateString());
+
                         newcell.setAttribute('empty-cell', '1'); // Ajoute l'attribut empty-cell 1 aux cellules vides
                         ligne.appendChild(newcell);
                     }
@@ -242,7 +245,8 @@ function addButtonsToCalendar() {
         if (emptyCell === '1') {
             button.textContent = '+';
             button.classList.add('add-course-button');
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (event) => {
+                openAddCourseModal(event);
                 // Ajoutez ici la fonctionnalité pour ouvrir la fenêtre de création de cours
             });
         } else if (emptyCell === '0') {
@@ -258,17 +262,49 @@ function addButtonsToCalendar() {
 }
 
 function openAddCourseModal(event) {
-    const cell = event.target.parentElement;
-    // Récupérer les informations de la cellule (date, horaire, groupe) et les préremplir dans le formulaire de création de cours.
-    // Ouvrir la modale de création de cours.
+    const cell = event.target;
+    const date = cell.getAttribute('data-date');
+    const heureDebut = cell.parentElement.getAttribute('id');
+    const groupe = cell.getAttribute('class').replace('groupe-', '');
+
+    // Préremplir le formulaire avec les informations de la cellule
+    document.getElementById('course-date').value = date;
+    document.getElementById('horaire_debut').value = heureDebut;
+    document.getElementById('course-group').value = groupe;
+
+    // Ouvrir la modale
+    document.getElementById('add-course-modal').style.display = 'block';
 }
+
   
 function openDeleteCourseModal(event) {
     const cell = event.target.parentElement;
     // Récupérer les informations de la cellule (date, horaire, groupe, cours) et les afficher dans le formulaire de suppression de cours.
     // Ouvrir la modale de suppression de cours.
 }
-  
+
+function addCourse() {
+    const formData = new FormData(document.getElementById("add-course-form"));
+
+    fetch('../php/add_course.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Mettre à jour le calendrier après l'ajout du cours
+            loadCourses();
+        } else {
+            console.error("Erreur lors de l'ajout du cours :", response.statusText);
+        }
+    })
+    .catch(error => console.error("Erreur lors de l'ajout du cours :", error));
+}
+
+document.getElementById("add-course-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêcher la soumission classique du formulaire
+    addCourse(); // Appeler la fonction pour ajouter un cours
+});
   
 
 document.addEventListener('DOMContentLoaded', () => {
