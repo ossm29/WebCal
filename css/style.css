@@ -132,7 +132,7 @@ td[id="Prog Web"] {
     font-size: 10px; /* Modifiez cette valeur pour ajuster la taille du texte */
 }
 
-#add-course-container {
+#add-course-modal {
     position: fixed;
     bottom: 20px;
     right: 20px;

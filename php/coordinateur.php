@@ -32,7 +32,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
         <button id="next-week">&rarr;</button>
     </div>
     
-    <div id="add-course-container">
+    <div id="add-course-modal" style="display:none;">
 
         <form id="add-course-form">
             <label for="type">Type:</label>
@@ -52,7 +52,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
             <input type="text" id="salle" name="salle"><br>
 
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date"><br>
+            <input type="date" id="course-date" name="date"><br>
 
             <label for="horaire_debut">Horaire de début:</label>
             <input type="time" id="horaire_debut" name="horaire_debut"><br>
@@ -61,7 +61,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
             <input type="time" id="horaire_fin" name="horaire_fin"><br>
 
             <label for="groupes">Groupes:</label>
-            <input type="text" id="groupes" name="groupes" placeholder="1,2,3"><br>
+            <input type="text" id="course-group" name="groupes" placeholder="1,2,3"><br>
 
             <input type="submit" value="Ajouter">
         </form>
