@@ -131,3 +131,15 @@ td[id="Prog Web"] {
 .add-course-button, .remove-course-button {
     font-size: 10px; /* Modifiez cette valeur pour ajuster la taille du texte */
 }
+
+#add-course-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
