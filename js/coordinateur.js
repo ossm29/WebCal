@@ -282,7 +282,29 @@ function openDeleteCourseModal(event) {
     // Récupérer les informations de la cellule (date, horaire, groupe, cours) et les afficher dans le formulaire de suppression de cours.
     // Ouvrir la modale de suppression de cours.
 }
-  
+
+function addCourse() {
+    const formData = new FormData(document.getElementById("add-course-form"));
+
+    fetch('../php/add_course.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Mettre à jour le calendrier après l'ajout du cours
+            loadCourses();
+        } else {
+            console.error("Erreur lors de l'ajout du cours :", response.statusText);
+        }
+    })
+    .catch(error => console.error("Erreur lors de l'ajout du cours :", error));
+}
+
+document.getElementById("add-course-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêcher la soumission classique du formulaire
+    addCourse(); // Appeler la fonction pour ajouter un cours
+});
   
 
 document.addEventListener('DOMContentLoaded', () => {
