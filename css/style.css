@@ -28,9 +28,10 @@ th {
 
 
 td {
-    padding: 5px;
+    max-height: 50px;
     text-align: center;
     font-size: 12px;
+
 }
 
 .heure {
@@ -52,17 +53,22 @@ td {
 
 button {
     background-color: #607D8B;    /* 1 */
-    border: none;                 /* 2 */
+    border: 1px solid #ccc;
     color: white;                 /* 3 */
-    padding: 10px 20px;           /* 4 */
     text-align: center;           /* 5 */
     text-decoration: none;        /* 6 */
     display: inline-block;        /* 7 */
-    font-size: 16px;              /* 8 */
-    margin: 4px 2px;              /* 9 */
+
     cursor: pointer;              /* 10 */
     border-radius: 4px;           /* 11 */
+}
+
+#week-navigation button {
+    padding: 10px 20px;           /* 4 */
+    font-size: 16px;              /* 8 */
+    margin: 4px 2px;              /* 9 */
     transition: 0.3s;             /* 12 */
+
 }
 
 button:hover {
@@ -120,4 +126,8 @@ td[id="Systèmes"] {
 /* Couleur pour les cellules de cours de Prog Web */
 td[id="Prog Web"] {
     background-color: rgba(243, 156, 18, 0.7); /* Jaune-Orange avec 70% de transparence */
+}
+
+.add-course-button, .remove-course-button {
+    font-size: 10px; /* Modifiez cette valeur pour ajuster la taille du texte */
 }

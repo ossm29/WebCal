@@ -211,6 +211,8 @@ function fillCalendar() {
                         newcell.setAttribute('class', `groupe-${groupe}`);
                         newcell.setAttribute('rowspan', nbLignes);
                         newcell.setAttribute('id', cours.matiere);
+                        newcell.setAttribute('empty-cell', '0'); // Ajoute l'attribut empty-cell 0 aux cellules non vides
+
                     
                         const courseInfo = `${cours.matiere}<br>${cours.type}<br>${cours.enseignant}<br>${cours.salle}`;
                         newcell.innerHTML = courseInfo;
@@ -220,13 +222,54 @@ function fillCalendar() {
                         console.log("case vide");
                         const newcell = document.createElement('td');
                         newcell.setAttribute('class', `groupe-${groupe}`);
+                        newcell.setAttribute('empty-cell', '1'); // Ajoute l'attribut empty-cell 1 aux cellules vides
                         ligne.appendChild(newcell);
                     }
                 }
             }
         }
     }
+    addButtonsToCalendar();
 }
+
+function addButtonsToCalendar() {
+    const allCells = document.querySelectorAll('td[empty-cell]');
+
+    allCells.forEach(cell => {
+        const button = document.createElement('button');
+        const emptyCell = cell.getAttribute('empty-cell');
+
+        if (emptyCell === '1') {
+            button.textContent = '+';
+            button.classList.add('add-course-button');
+            button.addEventListener('click', () => {
+                // Ajoutez ici la fonctionnalité pour ouvrir la fenêtre de création de cours
+            });
+        } else if (emptyCell === '0') {
+            button.textContent = '-';
+            button.classList.add('remove-course-button');
+            button.addEventListener('click', () => {
+                // Ajoutez ici la fonctionnalité pour ouvrir la fenêtre de suppression de cours
+            });
+        }
+
+        cell.appendChild(button);
+    });
+}
+
+function openAddCourseModal(event) {
+    const cell = event.target.parentElement;
+    // Récupérer les informations de la cellule (date, horaire, groupe) et les préremplir dans le formulaire de création de cours.
+    // Ouvrir la modale de création de cours.
+}
+  
+function openDeleteCourseModal(event) {
+    const cell = event.target.parentElement;
+    // Récupérer les informations de la cellule (date, horaire, groupe, cours) et les afficher dans le formulaire de suppression de cours.
+    // Ouvrir la modale de suppression de cours.
+}
+  
+  
 
 document.addEventListener('DOMContentLoaded', () => {
     loadCourses();
