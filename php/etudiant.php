@@ -59,6 +59,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'etudiant') {
 
 
     </table>
-<script src="../js/calendar.js"></script>
+<script src="../js/etudiant.js"></script>
 </body>
 </html>

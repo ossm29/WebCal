@@ -28,12 +28,17 @@
         {
             "login": "test2",
             "password": "$2y$10$AEVTPTHMerHN\/sbI6WvEGeaShE2R6Pkipbcr4kCXl\/rkPmPGY4E2u",
-            "status": "prof"
+            "status": "coordinateur"
         },
         {
             "login": "testt",
             "password": "$2y$10$WU\/mg7tFckM0NgDOooCfSuGqLR8SxlfFHxxaDI1ZOx9ybmJSeEPs2",
             "status": "etudiant"
+        },
+        {
+            "login": "coord",
+            "password": "$2y$10$KzHQhupicrV25hmn6x2EuuZ3Gg.xl1sbGLrTOnoUzHKtK8HwXvuL.",
+            "status": "coordinateur"
         }
     ]
 }

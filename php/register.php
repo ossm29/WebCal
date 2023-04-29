@@ -22,7 +22,7 @@
             <label for="status">Statut:</label>
             <select id="status" name="status" required>
                 <option value="etudiant">Étudiant</option>
-                <option value="prof">Professeur</option>
+                <option value="coordinateur">Coordinateur</option>
                 <option value="admin">Administrateur</option>
             </select><br><br>
             <input type="submit" value="S'inscrire">
