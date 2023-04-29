@@ -72,5 +72,17 @@
         "groupes": [
             "1"
         ]
+    },
+    {
+        "type": "cours",
+        "matiere": "SVT",
+        "enseignant": "Jean",
+        "salle": "E210",
+        "date": "24\/04\/2023",
+        "horaire_debut": "09:00",
+        "horaire_fin": "10:00",
+        "groupes": [
+            "1"
+        ]
     }
 ]

@@ -211,7 +211,9 @@ function fillCalendar() {
                         newcell.setAttribute('class', `groupe-${groupe}`);
                         newcell.setAttribute('rowspan', nbLignes);
                         newcell.setAttribute('id', cours.matiere);
-                        newcell.setAttribute('data-date', date);
+                        const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+                        newcell.setAttribute('data-date', formattedDate);
+
                         newcell.setAttribute('empty-cell', '0'); // Ajoute l'attribut empty-cell 0 aux cellules non vides
 
                     
@@ -223,8 +225,10 @@ function fillCalendar() {
                         console.log("case vide");
                         const newcell = document.createElement('td');
                         newcell.setAttribute('class', `groupe-${groupe}`);
-                        newcell.setAttribute('data-date', date.toLocaleDateString());
 
+                        const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+                        newcell.setAttribute('data-date', formattedDate);
+                        
                         newcell.setAttribute('empty-cell', '1'); // Ajoute l'attribut empty-cell 1 aux cellules vides
                         ligne.appendChild(newcell);
                     }
@@ -262,10 +266,11 @@ function addButtonsToCalendar() {
 }
 
 function openAddCourseModal(event) {
-    const cell = event.target;
+    const button = event.target;
+    const cell = button.parentElement;
     const date = cell.getAttribute('data-date');
     const heureDebut = cell.parentElement.getAttribute('id');
-    const groupe = cell.getAttribute('class').replace('groupe-', '');
+    const groupe = cell.getAttribute('class').split('-')[1];
 
     // Préremplir le formulaire avec les informations de la cellule
     document.getElementById('course-date').value = date;
@@ -275,6 +280,7 @@ function openAddCourseModal(event) {
     // Ouvrir la modale
     document.getElementById('add-course-modal').style.display = 'block';
 }
+
 
   
 function openDeleteCourseModal(event) {
