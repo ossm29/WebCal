@@ -257,8 +257,14 @@ function addButtonsToCalendar() {
         } else if (emptyCell === '0') {
             button.textContent = '-';
             button.classList.add('remove-course-button');
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (event) => {
                 // Ajoutez ici la fonctionnalité pour ouvrir la fenêtre de suppression de cours
+                if (confirm("Êtes-vous sûr de vouloir supprimer ce cours ?")) {
+                    const button = event.target;
+                    const cell = button.parentElement;
+                    const courseId = cell.getAttribute('id'); // Récupérer l'ID du cours
+                    removeCourseById(courseId);
+                }
             });
         }
 
@@ -307,6 +313,28 @@ function addCourse() {
     })
     .catch(error => console.error("Erreur lors de l'ajout du cours :", error));
 }
+
+function removeCourseById(id) {
+    fetch("../php/remove_course.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `id=${id}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            loadCourses();
+        } else {
+            alert("Erreur lors de la suppression du cours.");
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de la suppression du cours:", error);
+    });
+}
+
 
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
