@@ -325,6 +325,8 @@ function removeCourseById(id) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
+            // Mettre à jour le calendrier après la suppression du cours
+
             loadCourses();
         } else {
             alert("Erreur lors de la suppression du cours.");

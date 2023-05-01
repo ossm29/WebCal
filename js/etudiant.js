@@ -207,10 +207,16 @@ function fillCalendar() {
                         const newcell = document.createElement('td');
                         /* calcul du nombre de lignes qu'occupe le cours (rowspan) */
                         const nbLignes = ((cours.horaire_fin.split(":")[0] * 4 + cours.horaire_fin.split(":")[1] / 15) - (cours.horaire_debut.split(":")[0] * 4 + cours.horaire_debut.split(":")[1] / 15));
-
+                        
+                        newcell.setAttribute('id', cours.id);
                         newcell.setAttribute('class', `groupe-${groupe}`);
                         newcell.setAttribute('rowspan', nbLignes);
-                        newcell.setAttribute('id', cours.matiere);
+                        newcell.setAttribute('matiere', cours.matiere);
+                        const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+                        newcell.setAttribute('data-date', formattedDate);
+
+                        newcell.setAttribute('empty-cell', '0'); // Ajoute l'attribut empty-cell 0 aux cellules non vides
+
                     
                         const courseInfo = `${cours.matiere}<br>${cours.type}<br>${cours.enseignant}<br>${cours.salle}`;
                         newcell.innerHTML = courseInfo;
@@ -220,6 +226,11 @@ function fillCalendar() {
                         console.log("case vide");
                         const newcell = document.createElement('td');
                         newcell.setAttribute('class', `groupe-${groupe}`);
+
+                        const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+                        newcell.setAttribute('data-date', formattedDate);
+                        
+                        newcell.setAttribute('empty-cell', '1'); // Ajoute l'attribut empty-cell 1 aux cellules vides
                         ligne.appendChild(newcell);
                     }
                 }
