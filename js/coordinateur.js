@@ -377,6 +377,26 @@ function fillMatiereSelection(matieres) {
     });
 }
 
+function loadProfs() {
+    fetch('../data/profs.json')
+        .then(response => response.json())
+        .then(data => {
+            fillProfSelection(data);
+        })
+        .catch(error => console.error("Erreur lors du chargement des salles :", error));
+}
+
+function fillProfSelection(profs) {
+    const profSelect = document.getElementById("enseignant");
+
+    profs.forEach(prof => {
+        const option = document.createElement("option");
+        option.value = prof.nom;
+        option.textContent = prof.nom;
+        profSelect.appendChild(option);
+    });
+}
+
 
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
@@ -388,4 +408,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadCourses();
     loadRooms();
     loadMatieres();
+    loadProfs();
 });

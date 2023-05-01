@@ -45,17 +45,20 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
             <label for="matiere">Matière:</label>
             <select id="matiere" name="matiere" required>
                 <option value="">Sélectionnez une matiere</option>
-                <!-- Les options des salles seront ajoutées dynamiquement ici -->
-            </select>
+                <!-- Les options des matieres seront ajoutées dynamiquement ici -->
+            </select><br>
 
             <label for="enseignant">Enseignant:</label>
-            <input type="text" id="enseignant" name="enseignant"><br>
+            <select id="enseignant" name="enseignant" required>
+                <option value="">Sélectionnez un enseignant</option>
+                <!-- Les options des enseignants seront ajoutées dynamiquement ici -->
+            </select><br>
 
             <label for="salle">Salle:</label>
             <select id="salle" name="salle" required>
                 <option value="">Sélectionnez une salle</option>
                 <!-- Les options des salles seront ajoutées dynamiquement ici -->
-            </select>
+            </select><br>
 
             <label for="date">Date:</label>
             <input type="date" id="course-date" name="date"><br>
