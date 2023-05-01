@@ -3,6 +3,17 @@
 $jsonData = file_get_contents("../data/courses.json");
 $courses = json_decode($jsonData, true);
 
+// Trouvez l'ID maximal parmi les cours existants
+$maxId = 0;
+foreach ($courses as $course) {
+    if ($course['id'] > $maxId) {
+        $maxId = $course['id'];
+    }
+}
+
+// Récupération des données du formulaire et attribution d'un ID unique
+$newId = $maxId + 1;
+
 // Récupération des données du formulaire
 $rawDate = $_POST["date"];
 
@@ -11,6 +22,7 @@ $date = DateTime::createFromFormat('Y-m-d', $rawDate);
 $date = $date->format('d/m/Y');
 
 $course = [
+    "id" => $newId,
     "type" => $_POST["type"],
     "matiere" => $_POST["matiere"],
     "enseignant" => $_POST["enseignant"],

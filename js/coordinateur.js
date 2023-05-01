@@ -207,10 +207,11 @@ function fillCalendar() {
                         const newcell = document.createElement('td');
                         /* calcul du nombre de lignes qu'occupe le cours (rowspan) */
                         const nbLignes = ((cours.horaire_fin.split(":")[0] * 4 + cours.horaire_fin.split(":")[1] / 15) - (cours.horaire_debut.split(":")[0] * 4 + cours.horaire_debut.split(":")[1] / 15));
-
+                        
+                        newcell.setAttribute('id', cours.id);
                         newcell.setAttribute('class', `groupe-${groupe}`);
                         newcell.setAttribute('rowspan', nbLignes);
-                        newcell.setAttribute('id', cours.matiere);
+                        newcell.setAttribute('matiere', cours.matiere);
                         const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
                         newcell.setAttribute('data-date', formattedDate);
 

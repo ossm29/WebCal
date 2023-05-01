@@ -104,27 +104,27 @@ body {
 }
 
 /* Couleur pour les cellules de cours de BD */
-td[id="BD"] {
+td[matiere="BD"] {
     background-color: rgba(39, 174, 96, 0.7); /* Vert avec 70% de transparence */
 }
 
 /* Couleur pour les cellules de cours de Maths */
-td[id="Maths"] {
+td[matiere="Maths"] {
     background-color: rgba(41, 128, 185, 0.7); /* Bleu avec 70% de transparence */
 }
 
 /* Couleur pour les cellules de cours de Réseaux */
-td[id="Réseaux"] {
+td[matiere="Réseaux"] {
     background-color: rgba(230, 126, 34, 0.7); /* Orange avec 70% de transparence */
 }
 
 /* Couleur pour les cellules de cours de Systèmes */
-td[id="Systèmes"] {
+td[matiere="Systèmes"] {
     background-color: rgba(142, 68, 173, 0.7); /* Violet avec 70% de transparence */
 }
 
 /* Couleur pour les cellules de cours de Prog Web */
-td[id="Prog Web"] {
+td[matiere="Prog Web"] {
     background-color: rgba(243, 156, 18, 0.7); /* Jaune-Orange avec 70% de transparence */
 }
 
