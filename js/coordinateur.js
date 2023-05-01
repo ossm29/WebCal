@@ -357,6 +357,26 @@ function fillRoomSelection(rooms) {
     });
 }
 
+function loadMatieres() {
+    fetch('../data/matieres.json')
+        .then(response => response.json())
+        .then(data => {
+            fillMatiereSelection(data);
+        })
+        .catch(error => console.error("Erreur lors du chargement des matieres :", error));
+}
+
+function fillMatiereSelection(matieres) {
+    const matiereSelect = document.getElementById("matiere");
+
+    matieres.forEach(matiere => {
+        const option = document.createElement("option");
+        option.value = matiere.nom;
+        option.textContent = matiere.nom;
+        matiereSelect.appendChild(option);
+    });
+}
+
 
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
@@ -367,4 +387,5 @@ document.getElementById("add-course-form").addEventListener("submit", function (
 document.addEventListener('DOMContentLoaded', () => {
     loadCourses();
     loadRooms();
+    loadMatieres();
 });

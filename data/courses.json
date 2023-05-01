@@ -42,7 +42,7 @@
     {
         "id": 4,
         "type": "TP",
-        "matiere": "R\u00e9seaux",
+        "matiere": "Reseaux",
         "enseignant": "Martin",
         "salle": "C203",
         "date": "10\/04\/2023",
@@ -64,6 +64,19 @@
         "horaire_fin": "12:45",
         "groupes": [
             "1"
+        ]
+    },
+    {
+        "id": 6,
+        "type": "cours",
+        "matiere": "BDD",
+        "enseignant": "Jean",
+        "salle": "A201",
+        "date": "03\/05\/2023",
+        "horaire_debut": "10:00",
+        "horaire_fin": "12:45",
+        "groupes": [
+            "2"
         ]
     }
 ]
