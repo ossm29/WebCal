@@ -337,6 +337,26 @@ function removeCourseById(id) {
     });
 }
 
+function loadRooms() {
+    fetch('../data/salles.json')
+        .then(response => response.json())
+        .then(data => {
+            fillRoomSelection(data);
+        })
+        .catch(error => console.error("Erreur lors du chargement des salles :", error));
+}
+
+function fillRoomSelection(rooms) {
+    const roomSelect = document.getElementById("salle");
+
+    rooms.forEach(room => {
+        const option = document.createElement("option");
+        option.value = room.nom;
+        option.textContent = room.nom;
+        roomSelect.appendChild(option);
+    });
+}
+
 
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
@@ -346,4 +366,5 @@ document.getElementById("add-course-form").addEventListener("submit", function (
 
 document.addEventListener('DOMContentLoaded', () => {
     loadCourses();
+    loadRooms();
 });

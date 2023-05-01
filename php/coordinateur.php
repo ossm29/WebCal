@@ -49,7 +49,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
             <input type="text" id="enseignant" name="enseignant"><br>
 
             <label for="salle">Salle:</label>
-            <input type="text" id="salle" name="salle"><br>
+            <select id="salle" name="salle" required>
+                <option value="">Sélectionnez une salle</option>
+                <!-- Les options des salles seront ajoutées dynamiquement ici -->
+            </select>
 
             <label for="date">Date:</label>
             <input type="date" id="course-date" name="date"><br>

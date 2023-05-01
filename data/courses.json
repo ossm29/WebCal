@@ -60,21 +60,8 @@
         "enseignant": "Jean",
         "salle": "E210",
         "date": "25\/04\/2023",
-        "horaire_debut": "09:45",
-        "horaire_fin": "10:45",
-        "groupes": [
-            "1"
-        ]
-    },
-    {
-        "id": 6,
-        "type": "cours",
-        "matiere": "SVT",
-        "enseignant": "Jean",
-        "salle": "E210",
-        "date": "01\/05\/2023",
-        "horaire_debut": "10:45",
-        "horaire_fin": "11:45",
+        "horaire_debut": "09:15",
+        "horaire_fin": "12:45",
         "groupes": [
             "1"
         ]
