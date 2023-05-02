@@ -1,18 +1,18 @@
 [
     {
         "nom": "BDD",
-        "id": "1"
+        "id": 1
     },
     {
         "nom": "Prog Web",
-        "id": "2"
+        "id": 2
     },
     {
         "nom": "Reseaux",
-        "id": "3"
+        "id": 3
     },
     {
         "nom": "GLA",
-        "id": "4"
+        "id": 4
     }
 ]

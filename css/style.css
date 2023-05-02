@@ -104,7 +104,7 @@ body {
 }
 
 /* Couleur pour les cellules de cours de BD */
-td[matiere="BD"] {
+td[matiere="BDD"] {
     background-color: rgba(39, 174, 96, 0.7); /* Vert avec 70% de transparence */
 }
 
@@ -114,7 +114,7 @@ td[matiere="Maths"] {
 }
 
 /* Couleur pour les cellules de cours de Réseaux */
-td[matiere="Réseaux"] {
+td[matiere="Reseaux"] {
     background-color: rgba(230, 126, 34, 0.7); /* Orange avec 70% de transparence */
 }
 
@@ -142,4 +142,41 @@ td[matiere="Prog Web"] {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.list-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.list-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+li {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 23px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
 }
