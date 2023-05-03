@@ -312,6 +312,11 @@ async function openEditCourseModal(event) {
         // Convertir la date dans le format souhaité pour l'input date
         const rawDate = course.date.split('/').reverse().join('-');
 
+        const editCourseForm = document.getElementById('edit-course-form');
+
+        // Définir l'attribut data-course-id sur le formulaire
+        editCourseForm.setAttribute('data-course-id', courseId);
+
         // Remplir le formulaire avec les informations actuelles du cours
         document.getElementById('edit-course-date').value = rawDate;
         document.getElementById('edit-course-horaire-debut').value = course.horaire_debut;
@@ -323,6 +328,7 @@ async function openEditCourseModal(event) {
         console.error("Erreur: Le cours avec l'ID", courseId, "n'a pas été trouvé.");
     }
 }
+
 
 
 function addCourse() {
@@ -345,6 +351,31 @@ function addCourse() {
     })
     .catch(error => console.error("Erreur lors de l'ajout du cours :", error));
 }
+
+function editCourse() {
+    const editCourseForm = document.getElementById("edit-course-form");
+    const courseId = editCourseForm.getAttribute('data-course-id');
+    
+    const formData = new FormData(editCourseForm);
+    formData.append('course_id', courseId);
+
+    fetch('../php/edit_course.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Mettre à jour le calendrier après la modification du cours
+            loadCourses();
+            // Fermer le formulaire
+            document.getElementById('edit-course-modal').style.display = 'none';
+        } else {
+            console.error("Erreur lors de la modification du cours :", response.statusText);
+        }
+    })
+    .catch(error => console.error("Erreur lors de la modification du cours :", error));
+}
+
 
 function removeCourseById(id) {
     fetch("../php/remove_course.php", {
@@ -433,6 +464,11 @@ function fillProfSelection(profs) {
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
     addCourse(); // Appeler la fonction pour ajouter un cours
+});
+
+document.getElementById("edit-course-form").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêcher la soumission classique du formulaire
+    editCourse(); // Appeler la fonction pour ajouter un cours
 });
 
 document.getElementById('cancel-add-course').addEventListener('click', function() {
