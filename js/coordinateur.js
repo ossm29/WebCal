@@ -307,6 +307,9 @@ function addCourse() {
         if (response.ok) {
             // Mettre à jour le calendrier après l'ajout du cours
             loadCourses();
+            // Enlever le formulaire
+            document.getElementById('add-course-modal').style.display = 'none';
+
         } else {
             console.error("Erreur lors de l'ajout du cours :", response.statusText);
         }
@@ -401,6 +404,10 @@ function fillProfSelection(profs) {
 document.getElementById("add-course-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêcher la soumission classique du formulaire
     addCourse(); // Appeler la fonction pour ajouter un cours
+});
+
+document.getElementById('cancel-add-course').addEventListener('click', function() {
+    document.getElementById('add-course-modal').style.display = 'none';
 });
   
 

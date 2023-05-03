@@ -168,3 +168,15 @@ document.getElementById("add-salle-form").addEventListener("submit", (event) => 
     event.preventDefault();
     addSalle();
 });
+
+document.getElementById('cancel-add-matiere').addEventListener('click', function() {
+    document.getElementById('add-matiere-modal').style.display = 'none';
+});
+
+document.getElementById('cancel-add-prof').addEventListener('click', function() {
+    document.getElementById('add-prof-modal').style.display = 'none';
+});
+
+document.getElementById('cancel-add-salle').addEventListener('click', function() {
+    document.getElementById('add-salle-modal').style.display = 'none';
+});

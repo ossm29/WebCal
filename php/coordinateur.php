@@ -73,6 +73,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
             <input type="text" id="course-group" name="groupes" placeholder="1,2,3"><br>
 
             <input type="submit" value="Ajouter">
+            <input type="button" id="cancel-add-course" value="Annuler">
         </form>
     </div>
 
