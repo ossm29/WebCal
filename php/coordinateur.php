@@ -32,7 +32,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
         <button id="next-week">&rarr;</button>
     </div>
     
-    <div id="add-course-modal" style="display:none;">
+    <div id="add-course-modal" class="modal" style="display:none;">
 
         <form id="add-course-form">
             <label for="type">Type:</label>
