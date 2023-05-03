@@ -266,6 +266,14 @@ function addButtonsToCalendar() {
                     removeCourseById(courseId);
                 }
             });
+
+            const editButton = document.createElement('button');
+            editButton.textContent = '✎';
+            editButton.classList.add('edit-course-button');
+            editButton.addEventListener('click', (event) => {
+                openEditCourseModal(event);
+            });
+            cell.appendChild(editButton);
         }
 
         cell.appendChild(button);
@@ -287,6 +295,35 @@ function openAddCourseModal(event) {
     // Ouvrir la modale
     document.getElementById('add-course-modal').style.display = 'block';
 }
+
+async function openEditCourseModal(event) {
+    const button = event.target;
+    const cell = button.parentElement;
+    const courseId = parseInt(cell.getAttribute('id'));
+
+    // Récupérer les données des cours à partir du fichier JSON
+    const response = await fetch("../data/courses.json");
+    const courses = await response.json();
+
+    // Trouver le cours correspondant à l'ID récupéré
+    const course = courses.find((course) => course.id === courseId);
+
+    if (course) {
+        // Convertir la date dans le format souhaité pour l'input date
+        const rawDate = course.date.split('/').reverse().join('-');
+
+        // Remplir le formulaire avec les informations actuelles du cours
+        document.getElementById('edit-course-date').value = rawDate;
+        document.getElementById('edit-course-horaire-debut').value = course.horaire_debut;
+        document.getElementById('edit-course-horaire-fin').value = course.horaire_fin;
+
+        // Ouvrir le modal
+        document.getElementById('edit-course-modal').style.display = 'block';
+    } else {
+        console.error("Erreur: Le cours avec l'ID", courseId, "n'a pas été trouvé.");
+    }
+}
+
 
 function addCourse() {
     const formData = new FormData(document.getElementById("add-course-form"));
