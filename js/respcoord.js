@@ -288,14 +288,6 @@ function openAddCourseModal(event) {
     document.getElementById('add-course-modal').style.display = 'block';
 }
 
-
-  
-function openDeleteCourseModal(event) {
-    const cell = event.target.parentElement;
-    // Récupérer les informations de la cellule (date, horaire, groupe, cours) et les afficher dans le formulaire de suppression de cours.
-    // Ouvrir la modale de suppression de cours.
-}
-
 function addCourse() {
     const formData = new FormData(document.getElementById("add-course-form"));
 
