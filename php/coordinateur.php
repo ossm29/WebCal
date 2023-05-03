@@ -100,11 +100,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
     <table id="tableau" border=1>
         <tr>
             <th class='heure' rowspan="2">Heure</th>
-            <th class='jour' colspan="2">Lundi</th>
-            <th class='jour' colspan="2">Mardi</th>
-            <th class='jour' colspan="2">Mercredi</th>
-            <th class='jour' colspan="2">Jeudi</th>
-            <th class='jour' colspan="2">Vendredi</th>
+            <th class='jour' colspan="2" id="lundi">Lundi</th>
+            <th class='jour' colspan="2" id="mardi">Mardi</th>
+            <th class='jour' colspan="2" id="mercredi">Mercredi</th>
+            <th class='jour' colspan="2" id="jeudi">Jeudi</th>
+            <th class='jour' colspan="2" id="vendredi">Vendredi</th>
         </tr>
         <?php
         for ($i = 0; $i < 5; $i++) {

@@ -20,6 +20,18 @@ function updateWeekDisplay() {
     const endDateOfWeek = new Date(startDate);
     endDateOfWeek.setDate(endDateOfWeek.getDate() + 4);
     currentWeek.textContent = `Semaine du ${formatDate(startDate)} au ${formatDate(endDateOfWeek)}`;
+    updateTooltips();
+
+}
+
+function updateTooltips() {
+    const days = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi'];
+    for (let i = 0; i < days.length; i++) {
+        const dayDate = new Date(startDate);
+        dayDate.setDate(dayDate.getDate() + i);
+        const tooltipText = `${days[i]} ${formatDate(dayDate)}`;
+        document.getElementById(days[i]).title = tooltipText;
+    }
 }
 
 /* Fonctions changement semaine */
