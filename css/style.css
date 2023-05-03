@@ -128,6 +128,11 @@ td[matiere="Prog Web"] {
     background-color: rgba(243, 156, 18, 0.7); /* Jaune-Orange avec 70% de transparence */
 }
 
+/* Couleur pour les cellules de cours de GLA */
+td[matiere="GLA"] {
+    background-color: rgba(79, 108, 252, 0.7); /* Jaune-Orange avec 70% de transparence */
+}
+
 .add-course-button, .remove-course-button {
     font-size: 10px; /* Modifiez cette valeur pour ajuster la taille du texte */
 }

@@ -41,14 +41,106 @@
         ]
     },
     {
-        "id": 7,
-        "type": "TP",
-        "matiere": "Prog Web",
+        "id": 8,
+        "type": "cours",
+        "matiere": "BDD",
+        "enseignant": "Dupont",
+        "salle": "A201",
+        "date": "01\/05\/2023",
+        "horaire_debut": "08:00",
+        "horaire_fin": "13:00",
+        "groupes": [
+            "1"
+        ]
+    },
+    {
+        "id": 9,
+        "type": "cours",
+        "matiere": "Reseaux",
         "enseignant": "Martin",
         "salle": "A202",
+        "date": "01\/05\/2023",
+        "horaire_debut": "08:00",
+        "horaire_fin": "13:00",
+        "groupes": [
+            "2"
+        ]
+    },
+    {
+        "id": 10,
+        "type": "cours",
+        "matiere": "Reseaux",
+        "enseignant": "Martin",
+        "salle": "A202",
+        "date": "01\/05\/2023",
+        "horaire_debut": "13:30",
+        "horaire_fin": "18:30",
+        "groupes": [
+            "1"
+        ]
+    },
+    {
+        "id": 11,
+        "type": "cours",
+        "matiere": "BDD",
+        "enseignant": "Dupont",
+        "salle": "A201",
+        "date": "01\/05\/2023",
+        "horaire_debut": "13:30",
+        "horaire_fin": "18:30",
+        "groupes": [
+            "2"
+        ]
+    },
+    {
+        "id": 12,
+        "type": "TP",
+        "matiere": "GLA",
+        "enseignant": "Tremblay",
+        "salle": "E201",
         "date": "02\/05\/2023",
         "horaire_debut": "09:30",
-        "horaire_fin": "13:30",
+        "horaire_fin": "13:00",
+        "groupes": [
+            "1",
+            "2"
+        ]
+    },
+    {
+        "id": 13,
+        "type": "TD",
+        "matiere": "Maths",
+        "enseignant": "Bernard",
+        "salle": "C211",
+        "date": "02\/05\/2023",
+        "horaire_debut": "13:30",
+        "horaire_fin": "15:00",
+        "groupes": [
+            "1"
+        ]
+    },
+    {
+        "id": 14,
+        "type": "TP",
+        "matiere": "Prog Web",
+        "enseignant": "Rei",
+        "salle": "E202",
+        "date": "03\/05\/2023",
+        "horaire_debut": "13:30",
+        "horaire_fin": "17:45",
+        "groupes": [
+            "2"
+        ]
+    },
+    {
+        "id": 15,
+        "type": "TP",
+        "matiere": "Prog Web",
+        "enseignant": "Vernier",
+        "salle": "E204",
+        "date": "04\/05\/2023",
+        "horaire_debut": "08:30",
+        "horaire_fin": "12:45",
         "groupes": [
             "1"
         ]

@@ -18,5 +18,9 @@
     {
         "id": 5,
         "nom": "Maths"
+    },
+    {
+        "id": 6,
+        "nom": "Logique"
     }
 ]

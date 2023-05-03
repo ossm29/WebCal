@@ -13,5 +13,25 @@
         "nom": "Tremblay",
         "prenom": "Marie",
         "id": "3"
+    },
+    {
+        "id": 4,
+        "nom": "Bernard",
+        "prenom": "Petit"
+    },
+    {
+        "id": 5,
+        "nom": "Paulin",
+        "prenom": "Christine"
+    },
+    {
+        "id": 6,
+        "nom": "Rei",
+        "prenom": "David"
+    },
+    {
+        "id": 7,
+        "nom": "Vernier",
+        "prenom": "Fr\u00e9d\u00e9ric"
     }
 ]
