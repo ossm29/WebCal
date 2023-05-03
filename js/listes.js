@@ -32,9 +32,55 @@ function displayProf(profs) {
     profs.forEach((prof) => {
         const li = document.createElement('li');
         li.textContent = `${prof.prenom} ${prof.nom}`;
+
+        // Ajout de l'ID du professeur en tant qu'attribut de l'élément li
+        li.setAttribute('data-prof-id', prof.id);
+
+        // Création du bouton Supprimer
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '-';
+
+        // Ajout d'un écouteur d'événements au bouton Supprimer
+        deleteButton.addEventListener('click', (event) => {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce professeur ?")) {
+                const li = event.target.parentElement;
+                const profId = li.getAttribute('data-prof-id');
+                removeProfById(profId);
+            }
+        });
+
+        // Ajout du bouton Supprimer à l'élément li
+        li.appendChild(deleteButton);
+
         profList.appendChild(li);
     });
 }
+
+function removeProfById(id) {
+    fetch("../php/remove_prof.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `id=${id}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Mettre à jour la liste des professeurs après la suppression
+            //loadProfs();
+        } else {
+            alert("Erreur lors de la suppression du professeur.");
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de la suppression du professeur:", error);
+    });
+}
+
+
+
+
 
 function displaySalle(salles) {
     const salleList = document.getElementById('salles-list');
