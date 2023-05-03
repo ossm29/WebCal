@@ -1,8 +1,8 @@
-<!-- Page du calendrier coordinateur -->
+<!-- Page du calendrier responsable -->
 <?php
 session_start();
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur') {
+if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'responsable') {
     header('Location: ../index.php');
     exit;
 }
@@ -20,7 +20,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['status'] !== 'coordinateur')
 <body>
     <header>
         <img id="logo" src="../ressources/webCal.png" alt="Logo">
-        <h1 class="calendrier-title">Calendrier Coordinateur</h1>
+        <h1 class="calendrier-title">Calendrier Responsable</h1>
         <form id="logoutForm" action="logout.php" method="post" style="display:inline;">
             <input type="submit" value="Déconnexion" style="float:right;">
         </form>

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('add-matiere').addEventListener('click', openAddMatiereModal);
     document.getElementById('add-prof').addEventListener('click', openAddProfModal);
     document.getElementById('add-salle').addEventListener('click', openAddSalleModal);
-  });
+});
   
 function loadData(jsonFile, callback) {
     fetch(jsonFile)

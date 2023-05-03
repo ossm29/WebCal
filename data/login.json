@@ -3,7 +3,7 @@
         {
             "login": "admin",
             "password": "$2y$10$WTZdxhDkUwWQvJYLj.o3k.ckR5iEcKWRJ9uP6zv2bGZGrpos1Mv..",
-            "status": "etudiant"
+            "status": "responsable"
         },
         {
             "login": "etudiant",
@@ -39,6 +39,11 @@
             "login": "coord",
             "password": "$2y$10$KzHQhupicrV25hmn6x2EuuZ3Gg.xl1sbGLrTOnoUzHKtK8HwXvuL.",
             "status": "coordinateur"
+        },
+        {
+            "login": "respo",
+            "password": "$2y$10$6AjQy5PKNAw85OzgCfQKeuoH1tojGKL.s5qEwcnPYpqEB5cz5Z4eC",
+            "status": "responsable"
         }
     ]
 }

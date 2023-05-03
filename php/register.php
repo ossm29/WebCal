@@ -23,7 +23,7 @@
             <select id="status" name="status" required>
                 <option value="etudiant">Étudiant</option>
                 <option value="coordinateur">Coordinateur</option>
-                <option value="admin">Administrateur</option>
+                <option value="responsable">Responsable</option>
             </select><br><br>
             <input type="submit" value="S'inscrire">
         </form>
