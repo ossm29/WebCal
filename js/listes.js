@@ -22,9 +22,29 @@ function displayMatiere(matieres) {
     const matiereList = document.getElementById('matieres-list');
     matieres.forEach((matiere) => {
         const li = document.createElement('li');
-        li.textContent = matiere.nom;
+        li.textContent = `${matiere.nom}`;
+
+        // Ajout de l'ID de la matière en tant qu'attribut de l'élément li
+        li.setAttribute('data-matiere-id', matiere.id);
+
+        // Création du bouton Supprimer
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '-';
+
+        // Ajout d'un écouteur d'événements au bouton Supprimer
+        deleteButton.addEventListener('click', (event) => {
+            if (confirm("Êtes-vous sûr de vouloir supprimer cette matière ?")) {
+                const li = event.target.parentElement;
+                const matiereId = li.getAttribute('data-matiere-id');
+                removeMatiereById(matiereId);
+            }
+        });
+
+        // Ajout du bouton Supprimer à l'élément li
+        li.appendChild(deleteButton);
+
         matiereList.appendChild(li);
-});
+    });
 }
 
 function displayProf(profs) {
@@ -79,17 +99,78 @@ function removeProfById(id) {
 }
 
 
+function removeMatiereById(id) {
+    fetch("../php/remove_matiere.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `id=${id}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Recharger la liste des matières après la suppression
+            //loadMatieres();
+        } else {
+            alert("Erreur lors de la suppression de la matière.");
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de la suppression de la matière:", error);
+    });
+}
 
 
 
 function displaySalle(salles) {
     const salleList = document.getElementById('salles-list');
+    salleList.innerHTML = '';
+
     salles.forEach((salle) => {
         const li = document.createElement('li');
-        li.textContent = salle.nom;
+        li.textContent = `${salle.nom}`;
+        li.setAttribute('id', salle.id);
+
+        const button = document.createElement('button');
+        button.textContent = '-';
+
+        button.addEventListener('click', (event) => {
+            if (confirm("Êtes-vous sûr de vouloir supprimer cette salle ?")) {
+                const button = event.target;
+                const cell = button.parentElement;
+                const salleId = cell.getAttribute('id');
+                removeSalleById(salleId);
+            }
+        });
+
+        li.appendChild(button);
         salleList.appendChild(li);
-});
+    });
 }
+
+function removeSalleById(id) {
+    fetch("../php/remove_salle.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `id=${id}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Recharger la liste des salles après la suppression
+            loadSalles();
+        } else {
+            alert("Erreur lors de la suppression de la salle.");
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de la suppression de la salle:", error);
+    });
+}
+
   
 // Fonctions pour ouvrir les modals d'ajout
 function openAddMatiereModal() {
