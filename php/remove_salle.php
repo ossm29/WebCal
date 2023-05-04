@@ -22,11 +22,11 @@ if ($salleIndex >= 0) {
     // Sauvegarde du fichier JSON mis à jour
     file_put_contents("../data/salles.json", json_encode($salles, JSON_PRETTY_PRINT));
 
-    // Envoi de la réponse au client
+    //
     header("Content-Type: application/json");
     echo json_encode(["success" => true]);
 } else {
-    // Envoi de la réponse d'échec au client
+    //
     header("Content-Type: application/json");
     echo json_encode(["success" => false]);
 }

@@ -22,11 +22,11 @@ if ($profIndex >= 0) {
     // Sauvegarde du fichier JSON mis à jour
     file_put_contents("../data/profs.json", json_encode($profs, JSON_PRETTY_PRINT));
 
-    // Envoi de la réponse au client
+    //
     header("Content-Type: application/json");
     echo json_encode(["success" => true]);
 } else {
-    // Envoi de la réponse d'échec au client
+    //
     header("Content-Type: application/json");
     echo json_encode(["success" => false]);
 }

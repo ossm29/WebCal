@@ -18,7 +18,14 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user'] = $user;
-        header('Location: ' . $user['status'] . '.php');
+
+        // Si le statut de l'utilisateur est "responsable", rediriger vers inter.php
+        if ($user['status'] === 'responsable') {
+            header('Location: inter.php');
+        } else {
+            header('Location: ' . $user['status'] . '.php');
+        }
+        
         exit;
     } else {
         header('Location: ../index.php?error=invalid_credentials');
