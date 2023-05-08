@@ -1,5 +1,6 @@
 # WebCal
-link : [WebCal](https://webcal.site/).
+Collaborative student calendar
+link : [WebCal](https://webcal.site/)
 
 ![image](https://user-images.githubusercontent.com/77997318/236083624-77e2b664-792c-4a9b-8e0d-3bd6555acc5f.png)
 ![image](https://user-images.githubusercontent.com/77997318/236083669-82bac0fd-46a6-4013-b57d-802b322e00d8.png)
