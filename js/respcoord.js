@@ -486,6 +486,10 @@ document.getElementById("edit-course-form").addEventListener("submit", function 
 document.getElementById('cancel-add-course').addEventListener('click', function() {
     document.getElementById('add-course-modal').style.display = 'none';
 });
+
+document.getElementById('cancel-edit-course').addEventListener('click', function() {
+    document.getElementById('edit-course-modal').style.display = 'none';
+});
   
 
 document.addEventListener('DOMContentLoaded', () => {
